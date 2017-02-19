@@ -1,0 +1,29 @@
+{
+  "name": "count-files-dirs",
+  "version": "0.1.0",
+  "description": "Counts files and directories in a given directory",
+  "main": "index.js",
+  "bin": {
+    "count-files-dirs": "cli.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": ["count", "files", "directories"],
+  "author": "Patrick Dawson",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "walk": "^2.3.9"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "mocha": "^3.2.0",
+    "mock-fs": "^4.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "extends": "../.eslintrc",
+    "rules": {
+        "prefer-arrow-callback": "off",
+        "func-names": ["error", "never"],
+        "global-require": "off"
+    },
+    "env": {
+        "mocha": true
+    }
+}
