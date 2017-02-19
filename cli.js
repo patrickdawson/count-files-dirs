@@ -2,9 +2,10 @@
 
 const program = require("commander");
 const counter = require(".");
+const pkg = require("./package.json");
 
 program
-  .version("1.0.0")
+  .version(pkg.version)
   .usage("Usage: count-files [options] directory")
   .parse(process.argv);
 
