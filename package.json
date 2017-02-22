@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^2.9.0",
+    "klaw-sync": "^1.1.2",
     "walk": "^2.3.9"
   },
   "devDependencies": {
