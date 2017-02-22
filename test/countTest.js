@@ -4,11 +4,11 @@ const mockfs = require("mock-fs");
 const expect = chai.expect;
 
 describe("count", function () {
-  let counter;
+  let countAsync;
   let countSync;
 
   before(function () {
-    counter = require("../lib/counter").counter;
+    countAsync = require("../lib/counter").countAsync;
     countSync = require("../lib/counter").countSync;
   });
 
@@ -100,7 +100,7 @@ describe("count", function () {
           data: {},
         });
 
-        counter("data", (result) => {
+        countAsync("data", (result) => {
           expect(result.fileCount).to.equal(0);
           done();
         });
@@ -111,7 +111,7 @@ describe("count", function () {
           data: {},
         });
 
-        counter("data", (result) => {
+        countAsync("data", (result) => {
           expect(result.dirCount).to.equal(0);
           done();
         });
@@ -125,7 +125,7 @@ describe("count", function () {
           },
         });
 
-        counter("data", (result) => {
+        countAsync("data", (result) => {
           expect(result.fileCount).to.equal(2);
           done();
         });
@@ -140,7 +140,7 @@ describe("count", function () {
           },
         });
 
-        counter("data", (result) => {
+        countAsync("data", (result) => {
           expect(result.dirCount).to.equal(1);
           done();
         });
@@ -165,14 +165,14 @@ describe("count", function () {
       });
 
       it("returns count of files found in a given directory", function (done) {
-        counter("data", (result) => {
+        countAsync("data", (result) => {
           expect(result.fileCount).to.equal(5);
           done();
         });
       });
 
       it("returns count of directores found in a given directory", function (done) {
-        counter("data", (result) => {
+        countAsync("data", (result) => {
           expect(result.dirCount).to.equal(2);
           done();
         });
