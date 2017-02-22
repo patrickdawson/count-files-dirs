@@ -1,6 +1,6 @@
 {
   "name": "count-files-dirs",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Counts files and directories in a given directory",
   "main": "index.js",
   "bin": {
