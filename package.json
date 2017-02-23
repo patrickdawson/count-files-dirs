@@ -14,6 +14,10 @@
     "files",
     "directories"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickdawson/count-files-dirs.git"
+  },
   "author": "Patrick Dawson",
   "license": "ISC",
   "dependencies": {
