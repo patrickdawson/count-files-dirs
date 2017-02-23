@@ -6,6 +6,7 @@ const pkg = require("./package.json");
 
 program
   .version(pkg.version)
+  .option("-s, --use-sync", "Uses sync method to count")
   .usage("Usage: count-files [options] directory")
   .parse(process.argv);
 
@@ -14,10 +15,20 @@ if (program.args.length !== 1) {
   process.exit(-1);
 }
 
-console.log(`Scanning directory ${program.args}`);
-counter(program.args[0], result => {
-  console.log("Finished:");
+if (program.useSync) {
+  const result = counter.countSync(program.args[0]);
+  console.log("Count sync finished:");
   console.log("---------");
   console.log(`Total files: ${result.fileCount}`);
   console.log(`Total directories: ${result.dirCount}`);
-});
+} else {
+  console.log(`Scanning directory ${program.args}`);
+  counter.countAsync(program.args[0], result => {
+    console.log("Count finished:");
+    console.log("---------");
+    console.log(`Total files: ${result.fileCount}`);
+    console.log(`Total directories: ${result.dirCount}`);
+  });
+}
+
+
